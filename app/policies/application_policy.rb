@@ -8,7 +8,13 @@ class ApplicationPolicy
     @record = record
   end
 
-  def index?
+  def feed?
+    true
+  end
+  def discover?
+    true
+  end
+    def index?
     false
   end
 

@@ -72,7 +72,7 @@ class PhotosController < ApplicationController
 
     def ensure_user_is_authorized
       if !PhotoPolicy.new(current_user, @photo).show?
-        redirect_back fallback_location: root_url
+        raise Pundit::NotAuthorizedError, "Not allowed"
       end
     end
     def ensure_current_user_is_owner
