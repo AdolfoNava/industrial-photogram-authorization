@@ -1,9 +1,9 @@
-<% if policy(@user).show? %>
-  <div class="row mb-4">
-    <div class="col-md-6 offset-md-3">
-      <%= render "users/user", user: @user %>
-    </div>
+<div class="row mb-4">
+  <div class="col-md-6 offset-md-3">
+    <%= render "users/user", user: @user %>
   </div>
+</div>
+<% if policy(@user).show_photo? %>
   <div class="row mb-2">
     <div class="col-md-6 offset-md-3">
       <%= render "users/profile_nav", user: @user %>

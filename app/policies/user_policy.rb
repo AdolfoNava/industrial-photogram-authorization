@@ -5,10 +5,17 @@ class UserPolicy < ApplicationPolicy
     @current_user = current_user
     @user = user
   end
-  def authorize?
-    true
-  end
+
   def feed?
     true
   end
+  def show?
+    true
+  end
+  def show_photo?
+    !user.private? || user.followers.include?(current_user) || current_user == user
+  end
+  def discover?
+    true
+  end 
 end

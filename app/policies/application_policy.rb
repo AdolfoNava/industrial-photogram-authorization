@@ -11,9 +11,6 @@ class ApplicationPolicy
   def feed?
     true
   end
-  def discover?
-    true
-  end
     def index?
     false
   end
