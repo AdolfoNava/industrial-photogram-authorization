@@ -11,7 +11,7 @@ class ApplicationPolicy
   def feed?
     true
   end
-    def index?
+  def index?
     false
   end
 
